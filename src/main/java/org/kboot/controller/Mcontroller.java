@@ -14,6 +14,7 @@ public class Mcontroller {
 	@Autowired
 	private BankService bservice;
 	
+	
 	@RequestMapping(value="/queryBank")
 	public List<SysBank> query(){
 		System.err.println("qunide");
