@@ -5,4 +5,8 @@
 	<select id="querySysBank" resultType="org.kboot.bean.SysBank">
 		select bandCode,bandName from sys_bank
 	</select>
+	
+	<insert id="addSysBank" parameterType="org.kboot.bean.SysBank">
+		insert into sys_bank(bandCode,bandName) values(#{bandCode},#{bandName})
+	</insert>
 </mapper>

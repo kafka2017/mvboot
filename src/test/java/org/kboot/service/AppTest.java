@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kboot.Application;
 import org.kboot.bean.SysBank;
+import org.kboot.commons.JSONHelper;
+import org.kboot.commons.ResultJson;
 import org.kboot.service.bank.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,5 +26,14 @@ public class AppTest {
 		for(SysBank s :l){
 			System.err.println(s.getBandCode());
 		}
+	}
+	
+	@Test
+	public void savebank(){
+		SysBank bank = new SysBank();
+		bank.setBandCode("B1");
+		bank.setBandName("测试银行");
+		ResultJson<Integer> re = bser.addSysBank(bank);
+		System.err.println(JSONHelper.toString(re));
 	}
 }
